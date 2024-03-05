@@ -2,7 +2,7 @@
 # Documents at https://ipm.hydroroll.team/
 
 from infini.register import Register
-from infini.router import Startswith
+from infini.router import Command
 from infini.input import Input
 from infini.output import Output
 from diceutils.utils import format_str
@@ -103,7 +103,7 @@ def roll(input: Input, args: str, name: str = None) -> str:
     )
 
 
-@register.handler(Startswith(".r"), priority=3)
+@register.handler(Command("r", alias="roll"), priority=3)
 def roll_handler(input: Input):
     args = format_str(input.get_plain_text(), begin=(".r", ".roll"))
 
