@@ -87,7 +87,6 @@ def roll(input: Input, args: str, name: str = None) -> str:
         return input.output(
             "text",
             "ndice.error.bad_roll_string",
-            status=1,
         )
 
     return input.output(
@@ -103,7 +102,7 @@ def roll(input: Input, args: str, name: str = None) -> str:
     )
 
 
-@register.handler(Command("r", alias="roll"), priority=3)
+@register.handler(Command("r", alias=["roll"]), priority=3)
 def roll_handler(input: Input):
     args = format_str(input.get_plain_text(), begin=(".r", ".roll"))
 
