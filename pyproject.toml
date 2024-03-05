@@ -1,0 +1,27 @@
+[project]
+name = "ndice"
+version = "0.1.0"
+description = "基础掷骰指令规则包"
+authors = [
+    {name = "苏向夜", email = "fu050409@163.com"},
+]
+dependencies = [
+    "infini>=2.0.4",
+    "diceutils>=0.2.5",
+]
+requires-python = ">=3.8"
+readme = "README.md"
+license = {text = "AGPL-3.0"}
+
+[build-system]
+requires = ["ipdm"]
+build-backend = "ipm.api.build"
+
+
+[tool.pdm]
+distribution = true
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "ipdm>=0.1.3",
+]
