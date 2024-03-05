@@ -11,6 +11,19 @@ loader = Loader()
 loader.load("ndice")
 loader.close()
 
+commands = [
+    ".r",
+    ".rd",
+    ".rd6",
+    ".r3d6",
+    ".r3d6*5",
+    ".r20#d6",
+    ".r3d6 毁灭人类",
+    ".r20#3d6 毁灭人类",
+]
+
 core = loader.into_core()
-for output in core.input(Input(".r20#d6")):
-    print(output)
+
+for command in commands:
+    for output in core.input(Input(command)):
+        print(output)
